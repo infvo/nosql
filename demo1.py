@@ -30,7 +30,6 @@ def addSchool(s):
     True
   )
 
-
 bakker = {"naam": "Bart Bakker", "vak": ["Informatica", "Natuurkunde"]}
 jansen = {"naam": "Johan Jansen", "vak": "Informatica"}
 klepper = {"naam": "Kees Klepper", "vak": ["Informatica", "Wiskunde"]}
@@ -110,7 +109,6 @@ print("\nAlle scholen:")
 for school in scholen.find():
   print(school)
 
-
 # show all documents in this collection:
 print("\nAlle docenten:")
 for docent in docenten.find():
@@ -132,4 +130,3 @@ for docent in db.docenten.find():
   docent["school"]["betapartner"] = school["betapartner"]
 #  del docent["school"]["id"]
   print(docent)
-
