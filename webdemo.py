@@ -20,12 +20,9 @@ class docenten:
   def GET(self):
     coll = db["docenten"]
     result = []
-    for d in coll.find():
-      docent = d
-      del docent["_id"]   # not JSON serializable
+    for docent in coll.find():
       result.append(docent)
-    return(json.dumps(result))
-
+    return render.docenten(docenten=result)
 
 if __name__ == "__main__":
   app = web.application(urls, globals())

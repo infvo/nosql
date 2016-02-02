@@ -26,3 +26,17 @@ for docent in collection.find({"vak": "Informatica"}):
 print("Natuurkunde-docenten:")
 for docent in collection.find({"vak": "Natuurkunde"}):
   print(docent)
+
+# add a new document
+bakker = {"naam": "Bart Bakker", "vak": ["Informatica", "Wiskunde"]}
+collection.replace_one(
+  {"naam": "Bart Bakker"},
+  bakker,
+  True # upsert
+)
+
+# update a document
+collection.update_one(
+  {"naam": "Bart Bakker"},
+  {"$set": {"vak": ["Informatica", "Wiskunde", "ANW"]}}
+)

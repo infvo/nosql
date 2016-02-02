@@ -9,8 +9,7 @@ $def with (docenten)
     <h3>Docenten</h3>
     <ul>
       $for d in docenten:
-      <li>{{ d.name }} - {{ d.vak }}</li>
+      <li> $d["naam"] - $d["vak"] </li>
     </ul>
   </body>
 </html>
-
