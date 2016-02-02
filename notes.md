@@ -14,3 +14,8 @@ for d in db.docenten.find():
       {"$set": {"vak": [d["vak"]]}}
     )
 ```
+
+Importeren van csv-bestand
+```
+mongoimport --type csv --db top2000 --file top2000/TOP-2000-2015-2.csv --fields 2015,titel,artiest,jaar --collection top2015
+```
