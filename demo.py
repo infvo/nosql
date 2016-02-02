@@ -39,17 +39,17 @@ addDocent(jansen)
 addDocent(klepper)
 
 # show all documents in this collection:
-print("Alle docenten:")
+print("\nAlle docenten:")
 for docent in docenten.find():
   print(docent)
 
 # show all documents with the specified property:
-print("Informatica-docenten:")
+print("\nInformatica-docenten:")
 for docent in docenten.find({"vak": "Informatica"}):
   print(docent)
 
 # show all documents with the specified property:
-print("Natuurkunde-docenten:")
+print("\nNatuurkunde-docenten:")
 for docent in docenten.find({"vak": "Natuurkunde"}):
   print(docent)
 
@@ -80,7 +80,7 @@ setSchool(jansen, hyper)
 setSchool(klepper, jobs)
 
 # show all documents in this collection:
-print("Alle docenten:")
+print("\nAlle docenten:")
 for docent in docenten.find():
   print(docent)
 
@@ -106,12 +106,8 @@ addSchoolRef(bakker, hyper["naam"])
 addSchoolRef(jansen, hyper["naam"])
 addSchoolRef(klepper, jobs["naam"])
 
-print("\nAlle scholen:")
-for school in scholen.find():
-  print(school)
-
 # show all documents in this collection:
-print("\nAlle docenten:")
+print("\nAlle docenten met school-id:")
 for docent in docenten.find():
   print(docent)
 
@@ -125,7 +121,7 @@ db.scholen.update(
   {"$set": {"betapartner": "False"}}
 )
 
-print("\nDocenten:")
+print("\nAlle docenten met hun school:")
 for docent in db.docenten.find():
   school = db.scholen.find_one({"_id": docent["school_id"]})
   docent["school"] = school
