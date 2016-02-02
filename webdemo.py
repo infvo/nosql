@@ -19,7 +19,7 @@ class docenten:
     coll = db["docenten"]
     result = []
     for docent in coll.find():
-      result.push(docent)
+      result.append(docent)
     return(json.dumps(result))
 
 
