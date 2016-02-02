@@ -34,5 +34,11 @@ $ chmod a+x mongod
 
 ## Python
 
+We hebben de volgende python-onderdelen nodig:
+
+* `pymongo`: de library om vanuit Python MongoDB aan te sturen ("driver").
+* `web.py`: een eenvoudig framework voor het maken van websites vanuit Python
+
+* `> sudo pip install pymongo`
 * `> sudo pip install web.py`
 * `> python webdemo.py`
