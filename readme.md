@@ -31,3 +31,8 @@ $ chmod a+x mongod
 * `$ mongo`
 * Je kunt daarin mongodb-shell opdrachten geven, bijvoorbeeld:
 * `> show databases`
+
+## Python
+
+* `> sudo pip install web.py`
+* '> python webdemo.py`
