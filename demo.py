@@ -92,23 +92,23 @@ print("Alle scholen:")
 for school in scholen.find():
   print(school)
 
-def addSchoolRef(d):
-  s = db.scholen.find_one({"naam": d["school"]["naam"]})
+def addSchoolRef(docent, schoolnaam):
+  school = db.scholen.find_one({"naam": schoolnaam})
   print("school:")
   print(s)
   db.docenten.update_one(
-    {"naam": d["naam"]},
-    {"$set": {"school.id": s["_id"]}},
+    {"naam": docent["naam"]},
+    {"$set": {"school_id": school["_id"]}},
     True
   )
 
-for docent in db.docenten.find():
-  addSchoolRef(docent)
+addSchoolRef(bakker, hyper["naam"])
+addSchoolRef(jansen, hyper["naam"])
+addSchoolRed(klepper, jobs["naam"])
 
 print("\nAlle scholen:")
 for school in scholen.find():
   print(school)
-
 
 # show all documents in this collection:
 print("\nAlle docenten:")
@@ -127,7 +127,6 @@ db.scholen.update(
 
 print("\nDocenten:")
 for docent in db.docenten.find():
-  school = db.scholen.find_one({"_id": docent["school"]["id"]})
-  docent["school"]["betapartner"] = school["betapartner"]
-#  del docent["school"]["id"]
+  school = db.scholen.find_one({"_id": docent["school_id"]})
+  docent["school"] = school
   print(docent)
