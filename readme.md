@@ -9,4 +9,16 @@ De opdrachten in dit repository zijn bedoeld als eerste oefeningen met MongoDB, 
 * maak een nieuw repository aan, via "clone from git", met de git-URL van dit repository.
 * geef deze readme weer als preview: selecteer `readme.md`, en selecteer via het dropdown-menu "preview". (Of, open `readme.md`, en selecteer in het menu bovenin "Preview".)
 
+#### MongoDB
+
+MongoDB is standaard geïnstalleerd op Cloud9. Op de volgende manier activeer je mongodb:
+
+* zie: https://docs.c9.io/docs/setting-up-mongodb
+
+```shell
+$ mkdir data
+$ echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
+$ chmod a+x mongod
+```
+
 
