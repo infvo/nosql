@@ -24,5 +24,5 @@ for docent in collection.find({"vak": "Informatica"}):
 
 # show all documents with the specified property:
 print("Natuurkunde-docenten:")
-for docent in collection.find({"vak": "Informatica"}):
+for docent in collection.find({"vak": "Natuurkunde"}):
   print(docent)
