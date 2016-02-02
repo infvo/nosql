@@ -14,6 +14,7 @@ De opdrachten in dit repository zijn bedoeld als eerste oefeningen met MongoDB, 
 MongoDB is standaard geïnstalleerd op Cloud9. Op de volgende manier activeer je mongodb:
 
 * zie: https://docs.c9.io/docs/setting-up-mongodb
+* voor de onderstaande opdrachten één voor één uit in een terminal-venster (rechts onderin).
 
 ```shell
 $ mkdir data
@@ -21,4 +22,12 @@ $ echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
 $ chmod a+x mongod
 ```
 
+* open een nieuw terminal-venster (onderaan), en start daarin mongodb:
+* `$ mongod`
+* laat dit programma actief in dit venster; gebruik voor andere opdrachten een ander terminal-venster.
+* in dit terminal-venster krijg je de mededelingen van de database-driver.
 
+* Open een nieuwe terminal-venster, en start de mongodb-shell, met het commando:
+* `$ mongo`
+* Je kunt daarin mongodb-shell opdrachten geven, bijvoorbeeld:
+* `> show databases`
