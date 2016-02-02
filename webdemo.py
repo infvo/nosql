@@ -19,7 +19,7 @@ class docenten:
     coll = db["docenten"]
     result = []
     for d in coll.find():
-      docend = d
+      docent = d
       del docent["_id"]   # not JSON serializable
       result.append(docent)
     return(json.dumps(result))
