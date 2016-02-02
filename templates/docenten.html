@@ -1,0 +1,16 @@
+$def with (docenten)
+
+<!doctype html>
+<html>
+  <head>
+    <title>Docenten</title>
+  </head>
+  <body>
+    <h3>Docenten</h3>
+    <ul>
+      $for d in docenten:
+      <li>{{ d.name }} - {{ d.vak }}</li>
+    </ul>
+  </body>
+</html>
+

@@ -10,6 +10,8 @@ urls = (
   '/docenten', 'docenten'
 )
 
+render = web.template.render('templates/')
+
 class index:
   def GET(self):
     return "Hello, world!"
