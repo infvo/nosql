@@ -18,7 +18,9 @@ class docenten:
   def GET(self):
     coll = db["docenten"]
     result = []
-    for docent in coll.find():
+    for d in coll.find():
+      docend = d
+      del docent["_id"]   # not JSON serializable
       result.append(docent)
     return(json.dumps(result))
 
