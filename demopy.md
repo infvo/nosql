@@ -75,3 +75,10 @@ addSchoolRef(bakker, hyper["naam"])
 addSchoolRef(jansen, hyper["naam"])
 addSchoolRed(klepper, jobs["naam"])
 ```
+
+*Opmerking:* de docent-documenten in de database bevatten nog steeds een deel van de school-gegevens als embedded document. Een dergelijke gedeeltelijke embedding kan handig zijn als het gegevens betreft die vaak nodig zijn in het omvattende document. Als deze gegevens bovendien niet veranderen (zoals de naam en plaats van de school), dan is er nauwelijks een risico op inconsistentie in de database.
+
+
+Bij de afweging tussen embedding en referencing moet je je afvragen welke gegevens vaak opgevraagd worden bij een 
+
+*Opdracht*: voeg een veld `docenten` toe aan elk school-document, en vul dit in via een query op alle docenten in de database.
