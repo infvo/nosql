@@ -59,12 +59,12 @@ for docent in docenten.find({"vak": "Natuurkunde"}):
 #  {"naam": "Bart Bakker"},
 #  {"$set": {"vak": ["Informatica", "Wiskunde", "ANW"]}}
 
+## school-documenten
+
 hyper = {"naam": "Hyperbolium Lyceum", "plaats": "Haarlem"}
 jobs = {"naam": "Gymnasium Jobsianum", "plaats": "Amsterdam"}
 
-
-addSchool(hyper)
-addSchool(jobs)
+# embedding in docent-document
 
 def setSchool(d, s):
   docenten.update_one(
@@ -84,11 +84,12 @@ print("\nAlle docenten:")
 for docent in docenten.find():
   print(docent)
 
-# extend embedding with referencing
+# scholen in aparte collection; reference in docent-document
 
 addSchool(hyper)
 addSchool(jobs)
-print("Alle scholen:")
+
+print("\nAlle scholen:")
 for school in scholen.find():
   print(school)
 
@@ -101,6 +102,10 @@ def addSchoolRef(docent, schoolnaam):
     {"$set": {"school_id": school["_id"]}},
     True
   )
+
+del bakker["school"]
+del jansen["school"]
+del klepper["school"]
 
 addSchoolRef(bakker, hyper["naam"])
 addSchoolRef(jansen, hyper["naam"])
