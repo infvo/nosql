@@ -35,4 +35,4 @@ $ chmod a+x mongod
 ## Python
 
 * `> sudo pip install web.py`
-* '> python webdemo.py`
+* `> python webdemo.py`
