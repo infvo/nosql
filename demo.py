@@ -6,7 +6,7 @@ client = pymongo.MongoClient()
 db = client.test # or: client["test"]
 
 # show all collections:
-print("Collections:)
+print("Collections:")
 print(db.collection_names(include_system_collections=False))
 
 # use the 'docenten' collection:
