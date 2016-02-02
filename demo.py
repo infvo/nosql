@@ -94,8 +94,8 @@ for school in scholen.find():
 
 def addSchoolRef(docent, schoolnaam):
   school = db.scholen.find_one({"naam": schoolnaam})
-  print("school:")
-  print(s)
+#  print("school:")
+#  print(school)
   db.docenten.update_one(
     {"naam": docent["naam"]},
     {"$set": {"school_id": school["_id"]}},
@@ -104,7 +104,7 @@ def addSchoolRef(docent, schoolnaam):
 
 addSchoolRef(bakker, hyper["naam"])
 addSchoolRef(jansen, hyper["naam"])
-addSchoolRed(klepper, jobs["naam"])
+addSchoolRef(klepper, jobs["naam"])
 
 print("\nAlle scholen:")
 for school in scholen.find():
