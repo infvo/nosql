@@ -9,7 +9,11 @@ $def with (docenten)
     <h3>Docenten</h3>
     <ul>
       $for d in docenten:
-      <li> $d["naam"] - $d["vak"] </li>
+      <li> $d["naam"]
+        $for v in d["vak"]:
+          - $v
+      </li>
     </ul>
+    <a href="/form">Voeg docent toe</a>
   </body>
 </html>
