@@ -44,12 +44,12 @@ We hebben de volgende python-onderdelen nodig:
 Deze onderdelen kun je installeren door middel van de volgende shell-opdrachten:
 
 ```shell
-> sudo pip install pymongo
-> sudo pip install web.py
+$ sudo pip install pymongo
+$ sudo pip install web.py
 ```
 
 Je kunt de werking van `web.py` controleren via:
 
 ```
-> python webdemo.py
+$ python webdemo.py
 ```
