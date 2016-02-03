@@ -64,7 +64,7 @@ for docent in docenten.find({"vak": "Natuurkunde"}):
 hyper = {"naam": "Hyperbolium Lyceum", "plaats": "Haarlem"}
 jobs = {"naam": "Gymnasium Jobsianum", "plaats": "Amsterdam"}
 
-# embedding in docent-document
+# embedding van school-document in docent-document
 
 def setSchool(d, s):
   docenten.update_one(
