@@ -8,13 +8,10 @@ Met de MongoDB shell kun je interactief database-opdrachten geven. Dit helpt bij
 
 *Tip*: met de pijltjes-toetsen kun je de opdrachten uit de historie opvragen; deze kun je ook aanpassen en opnieuw laten uitvoeren, bijvoorbeeld als je een tikfout gemaakt hebt.
 
-`$ mongo` - start de shell (in een terminal-window).
-
-`> show databases` - overzicht van aanwezige databases.
-
-`> use test` - we werken met de "test" database.
-
-`> show collections` - we werken met de "test" database.
+* `$ mongo` - start de shell (in een terminal-window).
+* `> show databases` - overzicht van aanwezige databases.
+* `> use test` - we werken met de "test" database.
+* `> show collections` - we werken met de "test" database.
 
 Toevoegen van een docent-document:
 
@@ -31,17 +28,13 @@ Opvragen van alle documenten in de docenten-collection:
 > db.docenten.find()
 ```
 
-*Opdracht*: voeg de docent-documenten toe:
+*Opdracht*: voeg de onderstaande docent-documenten toe, en vraag vervolgens een overzicht van alle documenten. *Merk op* dat we hier verschillende vormen gebruiken voor het veld "vak".
 
 ```
 {naam: "Kees Klepper", vak: ["Informatica", "Wiskunde"]}
 {naam: "Frans Filmer", vak: ["Wiskunde"]}
 {naam: "Jos Jansen", vak: "Engels"}
 ```
-
-en vraag een overzicht van alle documenten.
-
-*Merk op* dat we hier verschillende vormen gebruiken voor het veld "vak".
 
 ### Find
 
@@ -77,6 +70,7 @@ Veranderen van een veld:
 ... {$set: {vak: ["Engels"]} } 
 ... )
 ```
+
 De eerste parameter selecteert het document (als bij "find"), de tweede parameter is een update-commando, hier `$set` met een rij velden met hun nieuwe waarde.
 
 *Opmerking*: het is in dit geval handiger om voor alle documenten een lijst (array) te gebruiken voor het veld "vak". Je kunt de overgang van een enkel element naar een lijst soepel later verlopen.
@@ -87,9 +81,7 @@ De eerste parameter selecteert het document (als bij "find"), de tweede paramete
 
 ### Upsert
 
-Een insert-opdracht voegt altijd een nieuw document toe, ook als de waarden van de velden gelijk zijn. (*Probeer dit.*) 
-
-Als je dat niet wilt, kun je een update-opdracht gebruiken met de parameter: `upsert: true`. Dit is een update van een bestaand document, of, als dat er niet is, een insert van een nieuw document.
+Een insert-opdracht voegt altijd een nieuw document toe, ook als de waarden van de velden gelijk zijn. (*Probeer dit.*) Als je dat niet wilt, kun je een update-opdracht gebruiken met de parameter: `upsert: true`. Dit is een update van een bestaand document, of, als dat er niet is, een insert van een nieuw document.
 
 * https://docs.mongodb.org/manual/reference/method/db.collection.update
 
