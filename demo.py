@@ -103,8 +103,6 @@ def addSchoolRef(docent, schoolnaam):
     True
   )
 
-del bakker["school"]
-
 addSchoolRef(bakker, hyper["naam"])
 addSchoolRef(jansen, hyper["naam"])
 addSchoolRef(klepper, jobs["naam"])
