@@ -6,7 +6,7 @@ De opdrachten in dit repository zijn bedoeld als eerste oefeningen met MongoDB, 
 
 ### Cloud9
 
-* maak een nieuw repository aan, via "clone from git", met de git-URL van dit repository: `git@github.com:infvo/nosql.git`
+* maak een nieuw repository aan, via "clone from git", met de URL van dit repository: `https://github.com/infvo/nosql.git`
 * geef deze readme weer als preview: selecteer `readme.md`, en selecteer via het dropdown-menu "preview". (Of, open `readme.md`, en selecteer in het menu bovenin "Preview".)
 
 #### MongoDB
