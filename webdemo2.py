@@ -8,7 +8,9 @@ db = client["test"]
 urls = (
   '/', 'index',
   '/docenten', 'docenten',
-  '/form', 'form'
+  '/scholen', 'scholen',
+  '/docentenform', 'docentenform',
+  '/scholenform', 'scholenform'
 )
 
 render = web.template.render('templates/')
@@ -17,6 +19,13 @@ def addDocent(d):
   db.docenten.replace_one(
     {"naam": d["naam"]},
     d,
+    True
+  )
+
+def addSchool(s):
+  db.scholen.replace_one(
+    {"naam": s["naam"]},
+    s,
     True
   )
 
@@ -35,9 +44,14 @@ class docenten:
       result.append(docent)
     return render.docenten(docenten=result)
 
-class form:
+class scholen:
   def GET(self):
-    return render.form()
+    coll = db["scholen"]
+    return render.scholen(scholen=coll.find())
+
+class docentenform:
+  def GET(self):
+    return render.docentenform()
 
   def POST(self):
     data = web.input()
@@ -45,6 +59,16 @@ class form:
     data["vak"] = [x.strip() for x in data["vak"].split(",")]
     addDocent(data)
     return render.docenten(docenten=db.docenten.find())
+
+class scholenform:
+  def GET(self):
+    return render.scholenform()
+
+    def POST(self):
+      data = web.input()
+      print(data)
+      addSchool(data)
+      return render.scholen(scholen=db.scholen.find())
 
 if __name__ == "__main__":
   app = web.application(urls, globals())
