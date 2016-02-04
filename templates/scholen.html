@@ -9,9 +9,9 @@ $def with (scholen)
     <h3>Scholen</h3>
     <ul>
       $for s in scholen:
-      <li> $s["naam"] te s["plaats"]
+      <li> $s["naam"] te $s["plaats"]
       </li>
     </ul>
-    <a href="/form">Voeg docent toe</a>
+    <a href="/scholenform">Voeg school toe</a>
   </body>
 </html>
