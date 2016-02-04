@@ -9,8 +9,8 @@ urls = (
   '/', 'index',
   '/docenten', 'docenten',
   '/scholen', 'scholen',
-  '/docentenform', 'docentenform',
-  '/scholenform', 'scholenform'
+  '/docentform', 'docentform',
+  '/schoolform', 'schoolform'
 )
 
 render = web.template.render('templates/')
@@ -49,9 +49,9 @@ class scholen:
     coll = db["scholen"]
     return render.scholen(scholen=coll.find())
 
-class docentenform:
+class docentform:
   def GET(self):
-    return render.docentenform()
+    return render.docentform()
 
   def POST(self):
     data = web.input()
@@ -60,15 +60,15 @@ class docentenform:
     addDocent(data)
     return render.docenten(docenten=db.docenten.find())
 
-class scholenform:
+class schoolform:
   def GET(self):
-    return render.scholenform()
+    return render.schoolform()
 
-    def POST(self):
-      data = web.input()
-      print(data)
-      addSchool(data)
-      return render.scholen(scholen=db.scholen.find())
+  def POST(self):
+    data = web.input()
+    print(data)
+    addSchool(data)
+    return render.scholen(scholen=db.scholen.find())
 
 if __name__ == "__main__":
   app = web.application(urls, globals())
