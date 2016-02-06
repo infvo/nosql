@@ -7,7 +7,8 @@ db = client["blog"]
 
 urls = (
   '/', 'index',
-  '/create', 'createpost'
+  '/create', 'createpost',
+  '/posts', 'posts'
 )
 
 render = web.template.render('templates/')
@@ -15,6 +16,10 @@ render = web.template.render('templates/')
 class index:
   def GET(self):
     return "Hello, world!"
+    
+class posts:
+  def GET(self):
+    return render.posts(db.posts.find())
     
 class createpost:
   def GET(self):

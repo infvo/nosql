@@ -1,0 +1,15 @@
+$def with (posts)
+
+<!doctype html>
+<html>
+    <head>
+        <title>Posts</title>
+    </head>
+    <body>
+        $for p in posts:
+        <div>
+            <h3>$p["title"]</h3>
+            <p>$p["content"]</p>
+        </div>
+    </body>
+</html>
