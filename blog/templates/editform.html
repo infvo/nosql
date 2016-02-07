@@ -1,0 +1,19 @@
+$def with (post)
+
+<!doctype html>
+<html>
+    <head>
+        <title>Edit post</title>
+    </head>
+    <body>
+        <h2>Edit post</h2>
+        <div>
+            <h3>$post["title"]</h3>
+            <form action="saveform" method="post">
+              <input type="text" name="title" value="$post['title']">><br>    
+              <textarea name="content">$post["content"]</textarea>
+              <button type="submit">edit</button>
+            </form>
+        </div>
+    </body>
+</html>

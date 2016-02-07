@@ -8,7 +8,9 @@ db = client["blog"]
 urls = (
   '/', 'index',
   '/create', 'createpost',
-  '/posts', 'posts'
+  '/posts', 'posts',
+  '/editform', 'editform',
+  '/saveform', 'saveform'
 )
 
 render = web.template.render('templates/')
@@ -19,6 +21,26 @@ class index:
     
 class posts:
   def GET(self):
+    return render.posts(db.posts.find())
+
+class editform:
+  def GET(self):
+    return render.posts(db.posts.find())
+    
+  def POST(self):
+    data=web.input()
+    p = db.posts.find_one({"title": data["title"]})
+    if p != None:
+      return render.editform(post=p)
+    else:
+      return render.posts(db.posts.find())
+      
+class saveform:
+  def POST(self):
+    data=web.input()
+    db.posts.update_one({"title": data["title"]},
+        {"$set": {"content": data["content"]}}
+      )
     return render.posts(db.posts.find())
     
 class createpost:
