@@ -1,5 +1,6 @@
 import web
 import pymongo
+import markdown
 
 # configuration:
 client = pymongo.MongoClient()
@@ -13,7 +14,8 @@ urls = (
   '/saveform', 'saveform'
 )
 
-render = web.template.render('templates/')
+renderglobals = {'markdown': markdown.markdown}
+render = web.template.render('templates/', globals=renderglobals)
 
 class index:
   def GET(self):
@@ -60,4 +62,3 @@ class createpost:
 if __name__ == "__main__":
   app = web.application(urls, globals())
   app.run()
-  

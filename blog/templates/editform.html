@@ -10,9 +10,10 @@ $def with (post)
         <div>
             <h3>$post["title"]</h3>
             <form action="saveform" method="post">
-              <input type="text" name="title" value="$post['title']">><br>    
-              <textarea name="content">$post["content"]</textarea>
-              <button type="submit">edit</button>
+              <input type="text" name="title" value="$post['title']"><br>
+              <textarea name="content"
+                        cols="40" rows="8">$post["content"]</textarea><br>
+              <button type="submit">save</button>
             </form>
         </div>
     </body>
