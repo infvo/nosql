@@ -9,7 +9,7 @@ $def with (posts)
         $for p in posts:
         <div>
             <h3>$p["title"]</h3>
-            <p>$:markdown(p["content"])</p>
+            <p>$:markdown(p["content"], extensions=['markdown.extensions.fenced_code'])</p>
             <form action="editform" method="post">
               <input type="text" name="title" value="$p['title']">
               <button type="submit">edit</button>
