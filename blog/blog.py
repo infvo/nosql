@@ -57,7 +57,7 @@ class createpost:
       db.posts.insert(data)
     else:
       return "Existing post; update?"
-    return "Almost done..."
+    return render.posts(db.posts.find())
 
 if __name__ == "__main__":
   app = web.application(urls, globals())
