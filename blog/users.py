@@ -5,7 +5,8 @@ import base64
 
 urls = (
     '/','Index',
-    '/login','Login'
+    '/login','Login',
+    '/logout', 'Logout'
 )
 
 app = web.application(urls,globals())
@@ -19,6 +20,8 @@ allowed = (
     ('tom','pass2')
 )
 
+
+session = web.session.Session(app, web.session.DiskStore('sessions'), initializer={'count': 0})
 
 class Index:
     def GET(self):
@@ -44,6 +47,11 @@ class Login:
             web.header('WWW-Authenticate','Basic realm="Auth example"')
             web.ctx.status = '401 Unauthorized'
             return
+
+class Logout:
+    def GET(self):
+      session.kill()
+
 
 if __name__=='__main__':
     app.run()
