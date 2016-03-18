@@ -6,4 +6,5 @@
 mongod
 blog/blogenv/
 blog/sessions/
+blog/node_modules/
 *.pyc
